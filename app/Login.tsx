@@ -23,7 +23,8 @@ const Login = () => {
             return;
         }
     }
-  return (
+    return (
+      
     <View style={styles.container}>
         <Text style={styles.title}>Login</Text>
       
@@ -94,6 +95,7 @@ export default Login
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#E6F4FE',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',

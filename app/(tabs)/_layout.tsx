@@ -8,7 +8,6 @@ const _layout = () => {
       tabBarActiveTintColor: "#3B82F6",
       tabBarInactiveTintColor: "#9CA3AF",
       tabBarStyle: {
-        backgroundColor: '#111827',
         borderTopWidth: 0,
         height: 60,
     } }}>
