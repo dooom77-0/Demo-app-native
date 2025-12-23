@@ -10,7 +10,7 @@ const Signup = () => {
     const [error, setError] = useState<string>('');
     function handleSignup() {
         if(!username || !email || !password) {
-        setError('Please enter username, email and password');
+        setError('Please fill all the fields');
         return;
     }else if(password.length < 6) {
         setError('Password must be at least 6 characters long');
@@ -36,8 +36,11 @@ const Signup = () => {
         style={styles.input}
         label='Username'
         mode='outlined'
+        autoCapitalize='none'
+        activeOutlineColor='#307887'
         placeholder='Enter username'
         placeholderTextColor={'gray'}
+        right={<TextInput.Icon icon="account" />}
         />
         <TextInput
         value={email}
@@ -45,8 +48,10 @@ const Signup = () => {
         style={styles.input}
         label='Email'
         mode='outlined'
+        activeOutlineColor='#307887'
         placeholder='Enter email'
         placeholderTextColor={'gray'}
+        right={<TextInput.Icon icon="email" />}
         />
         <TextInput
         value={password}
@@ -54,9 +59,11 @@ const Signup = () => {
         style={styles.input}
         label='Password'
         mode='outlined'
+        activeOutlineColor='#307887'
         placeholder='Enter password'
         placeholderTextColor={'gray'}
         secureTextEntry
+        right={<TextInput.Icon icon="eye" />}
         />
         
         {error && <Text style={styles.error}>{error}</Text>}
@@ -65,7 +72,7 @@ const Signup = () => {
         style={styles.button}
         mode='contained'
         onPress={handleSignup}
-        >Signup</Button>
+        >Sign up</Button>
         
         <Button
         labelStyle={styles.login}

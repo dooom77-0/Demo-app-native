@@ -10,12 +10,16 @@ const Login = () => {
     function handleLogin() {
         if(email && password) {
             console.log('Email:', email);
-        console.log('Password:', password);
-        console.log('Login successful!');
-        router.replace('./(tabs)');
+            console.log('Password:', password);
+            console.log('Login successful!');
+            router.replace('./(tabs)');
         }
         if(!email || !password) {
             setError('Please enter email and password');
+            return;
+        }
+        if(password.length < 6) {
+            setError('Password must be at least 6 characters long');
             return;
         }
     }
@@ -28,23 +32,36 @@ const Login = () => {
         label='Email'
         keyboardType='email-address'
         mode='outlined'
+        autoCapitalize='none'
+        error={!!error}
+        activeOutlineColor='#307887'
         placeholder='example@gmail.com'
         placeholderTextColor={'gray'}
         value={email}
         onChangeText={setEmail}
+        right={<TextInput.Icon icon="email"  />}
          />
+         
+         
         <TextInput
         style={styles.input}
         label='password'
         mode='outlined'
+        activeOutlineColor='#307887'
         secureTextEntry
+        error={!!error}
         placeholder='Enter password'
         placeholderTextColor={'gray'}
         value={password}
         onChangeText={setPassword}
+        right={<TextInput.Icon icon="eye"  />}
           />
 
+
+
         {error && <Text style={{ color: 'red' }}>{error}</Text>}
+
+          
 
         <Button 
         mode='contained' 
@@ -53,6 +70,8 @@ const Login = () => {
         >Login
         </Button>
         
+          
+
         <Button 
         labelStyle={styles.textButton}
         mode='text' 
