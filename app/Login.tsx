@@ -81,6 +81,8 @@ const Login = () => {
         >Do not have an account ? Signup
         </Button>
         
+        
+        
     </View>
   )
 }
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
         width: '80%',
         marginBottom: 10,
         marginTop: 10,
-        borderColor:"gray",
+        borderColor: "gray",
     },
     button: {
         width: '50%',

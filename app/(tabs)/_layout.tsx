@@ -5,24 +5,34 @@ const _layout = () => {
   return (
     <Tabs screenOptions={{
       headerShown: false,
-      tabBarActiveTintColor: "#3B82F6",
+      tabBarActiveTintColor: "#f239a2",
       tabBarInactiveTintColor: "#9CA3AF",
       tabBarStyle: {
+        backgroundColor: "#1E293B",
         borderTopWidth: 0,
-        height: 60,
-    } }}>
+        height: 70,
+        paddingTop: 5
+      },
+      tabBarLabelStyle: {
+        fontSize: 12,
+        fontWeight: "bold"
+      }
+      }}>
       <Tabs.Screen name="index" options={{
-        title: 'Home',
+        title: 'Todos',
         tabBarIcon: ({ color }) => (
-          <FontAwesome name="home" size={24} color={color} />
+          <FontAwesome name="flash" size={30} color={color} />
         ),
       }} />
-      <Tabs.Screen name="profile" options={{
-        title: 'Profile',
+      <Tabs.Screen name="settings" options={{
+        title: 'Settings',
         tabBarIcon: ({ color }) => (
-          <FontAwesome name="user" size={24} color={color} />
+          <FontAwesome name="cog" size={30} color={color} />
         ),
-      }} />
+      }}
+      />
+
+      
     </Tabs>
   )
 }
