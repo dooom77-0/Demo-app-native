@@ -1,11 +1,11 @@
 import { Stack } from "expo-router";
 import { useState } from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import './global.css';
+import { ThemeProvider } from "@/hooks/ThemeContext";
 export default function RootLayout() {
   const [isLogin] = useState<boolean>(false);
   return (
-    <SafeAreaProvider>
+    <ThemeProvider>
       <Stack screenOptions={{ headerShown: false }}>
     {!isLogin ? 
     (
@@ -14,7 +14,7 @@ export default function RootLayout() {
     (
       <Stack.Screen name="(tabs)" options={{headerShown: false}} />
     )}
-  </Stack>
-    </SafeAreaProvider>
+      </Stack>
+    </ThemeProvider>
     );
 }

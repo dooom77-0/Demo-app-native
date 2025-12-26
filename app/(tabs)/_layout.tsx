@@ -19,9 +19,9 @@ const _layout = () => {
       }
       }}>
       <Tabs.Screen name="index" options={{
-        title: 'Todos',
+        title: 'Home',
         tabBarIcon: ({ color }) => (
-          <FontAwesome name="flash" size={30} color={color} />
+          <FontAwesome name="home" size={30} color={color} />
         ),
       }} />
       <Tabs.Screen name="settings" options={{
