@@ -12,20 +12,19 @@ export default function Index() {
 
   const Data = [{
     id: 1,
-    name: "محمد",
-    age: 20
+    title: 'الصفحة الرئيسية',
+    screen: 'Home'
   },
     {
       id: 2,
-      name: "علي",
-      age: 15
+      title: 'الصفحة الثانية',
+      screen: 'Settings'
     },
     {
       id: 3,
-      name: "مصطفى",
-      age: 30
-    },
-    
+      title: 'الصفحة الثالثة',
+      screen: 'profile'
+    }
   ]
   return (
     <>
@@ -39,18 +38,18 @@ export default function Index() {
         
         <Ionicons name={theme === "dark" ? "moon" : "sunny"} size={24} color={c.text} style={{ marginTop: 20 }} />
         
-        <Switch value={theme === "dark"}
+        <Switch value={theme === "dark"} // Switch component
           onValueChange={toggleTheme}
           thumbColor={theme === "dark" ? "#f4f4f5" : "#fff"}
         trackColor={{ false: "#94a3b8", true: "#3b82f6" }}
         />
         
-        <FlatList
+        <FlatList // FlatList component
           data={Data}
           renderItem={({ item }) => (
             <View style={{ backgroundColor: c.background, padding: 5, margin: 10, borderRadius: 10 }}>
-              <Text style={{ color: c.text }}>Name: {item.name}</Text>
-              <Text style={{ color: c.text }}>Age: {item.age}</Text>
+              <Text style={{ color: c.text }}>{item.title}</Text>
+              <Text style={{ color: c.text }}>{item.screen}</Text>
             </View>
           )}
           keyExtractor={(item) => item.id.toString()}
