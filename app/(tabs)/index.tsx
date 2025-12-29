@@ -3,8 +3,10 @@ import { ThemeContext } from "@/hooks/ThemeContext";
 import { View, Text, Switch, Image, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 export default function Index() {
+  const { t } = useTranslation();
   const context = useContext(ThemeContext);
   if (!context) return null;
   const { theme, toggleTheme, colors } = context;
@@ -33,7 +35,7 @@ export default function Index() {
         style={{ backgroundColor: c.background, flex: 1, alignItems: "center", justifyContent: "center",padding:20 }}>
         <Text
           style={{ color: c.text, fontSize: 16, fontWeight: "bold", marginBottom: 20,textAlign:"center" }}
-        >السلام عليكم و رحمة الله و بركاته هذا هو أول تطبيق يستخدم React Native</Text>
+          >{t("title")}</Text>
         <Image source={require("@/assets/images/favicon.png")} style={{ width: 100, height: 100 }} />
         
         <Ionicons name={theme === "dark" ? "moon" : "sunny"} size={24} color={c.text} style={{ marginTop: 20 }} />
@@ -54,7 +56,8 @@ export default function Index() {
           )}
           keyExtractor={(item) => item.id.toString()}
         />
-      </View>
+        </View>
+        
       </SafeAreaView>
     </>
     

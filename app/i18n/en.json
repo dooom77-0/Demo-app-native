@@ -1,0 +1,17 @@
+{
+    "home": "Home", 
+    "settings": "Settings",
+    "profile": "Profile",
+    "title": "Welcome to React Native",
+    "lang": "Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "login":" Login",
+    "signup":"Sign up",
+    "logout":"Logout",
+    "name":"Name",
+    "email":"Email",
+    "password":"Password",
+    "username":"Username",
+    "error":"Error"
+}
