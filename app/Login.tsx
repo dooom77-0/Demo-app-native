@@ -2,7 +2,9 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 import { router } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 const Login = () => {
+    const { t } = useTranslation();
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
@@ -26,11 +28,11 @@ const Login = () => {
     return (
       
     <View style={styles.container}>
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>{t("login")}</Text>
       
         <TextInput
         style={styles.input}
-        label='Email'
+        label={t("email")}
         keyboardType='email-address'
         mode='outlined'
         autoCapitalize='none'
@@ -46,12 +48,12 @@ const Login = () => {
          
         <TextInput
         style={styles.input}
-        label='password'
+        label={t("password")}
         mode='outlined'
         activeOutlineColor='#307887'
         secureTextEntry
         error={!!error}
-        placeholder='Enter password'
+        placeholder={t("enter your password")}
         placeholderTextColor={'gray'}
         value={password}
         onChangeText={setPassword}
@@ -68,7 +70,8 @@ const Login = () => {
         mode='contained' 
         style={styles.button}
         onPress={handleLogin}
-        >Login
+        >
+        {t("login")}
         </Button>
         
           
@@ -78,7 +81,8 @@ const Login = () => {
         mode='text' 
         style={styles.textButton}
         onPress={() => router.replace('./Signup')}
-        >Do not have an account ? Signup
+        >
+        {t("dont have an account?")} {t("signup")}
         </Button>
         
         

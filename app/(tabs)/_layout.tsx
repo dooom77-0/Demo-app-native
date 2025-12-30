@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tabs } from 'expo-router'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import {  SafeAreaView } from 'react-native-safe-area-context';
 const _layout = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>

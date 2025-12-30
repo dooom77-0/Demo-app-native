@@ -2,8 +2,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Button , TextInput } from 'react-native-paper'
 import { router, Stack } from 'expo-router'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
 const Signup = () => {
+    const { t } = useTranslation();
     const [username, setUsername] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -28,17 +30,17 @@ const Signup = () => {
       <>
       <Stack.Screen options={{headerShown: false}} />
         <View style={styles.container}>
-        <Text style={styles.title}>Signup</Text>
+        <Text style={styles.title}>{t("signup")}</Text>
         
         <TextInput
         value={username}
         onChangeText={setUsername}
         style={styles.input}
-        label='Username'
+        label={t("username")}
         mode='outlined'
         autoCapitalize='none'
         activeOutlineColor='#307887'
-        placeholder='Enter username'
+        placeholder={t("enter your username")}
         placeholderTextColor={'gray'}
         right={<TextInput.Icon icon="account" />}
         />
@@ -46,10 +48,10 @@ const Signup = () => {
         value={email}
         onChangeText={setEmail}
         style={styles.input}
-        label='Email'
+        label={t("email")}
         mode='outlined'
         activeOutlineColor='#307887'
-        placeholder='Enter email'
+        placeholder="example@gmail.com"
         placeholderTextColor={'gray'}
         right={<TextInput.Icon icon="email" />}
         />
@@ -57,10 +59,10 @@ const Signup = () => {
         value={password}
         onChangeText={setPassword}
         style={styles.input}
-        label='Password'
+        label={t("password")}
         mode='outlined'
         activeOutlineColor='#307887'
-        placeholder='Enter password'
+        placeholder={t("enter your password")}
         placeholderTextColor={'gray'}
         secureTextEntry
         right={<TextInput.Icon icon="eye" />}
@@ -72,14 +74,14 @@ const Signup = () => {
         style={styles.button}
         mode='contained'
         onPress={handleSignup}
-        >Sign up</Button>
+        >{t("signup")}</Button>
         
         <Button
         labelStyle={styles.login}
         style={styles.login}
         mode='text'
         onPress={() => router.replace('./Login')}
-        >Already have an account ? Login</Button>
+                >{t("already?")}{t("login")}</Button>
         </View>
       </>
     

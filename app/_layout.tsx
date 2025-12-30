@@ -12,7 +12,7 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false }}>
     {!isLogin ? 
     (
-      <Stack.Screen name="Login" options={{headerShown: false}} />
+      <Stack.Screen name="Signup" options={{headerShown: false}} />
     ) : 
     (
       <Stack.Screen name="(tabs)" options={{headerShown: false}} />
