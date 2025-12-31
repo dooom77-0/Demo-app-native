@@ -9,6 +9,7 @@
     "arabic": "Arabic",
     "login":" Login",
     "signup":"Sign up",
+    "description":"Hi there! Welcome to my first React Native app! I have added some things I have learned in this app, such as theme and language. I hope it is suitable for the beginning of more React Native apps.",
     "dont have an account?":"Don't have an account?",
     "already?":"Already have an account?",
     "enter your password":"Enter your password",

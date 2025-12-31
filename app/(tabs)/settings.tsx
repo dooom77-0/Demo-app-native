@@ -20,12 +20,13 @@ const Settings = () => {
         style={styles.Card}
       >
         <Text
-          style={{ color: c.text, fontSize: 16, fontWeight: "bold", marginBottom: 40 , textAlign:"center"}}
+          style={{ color: c.text, fontSize: 16, fontWeight: "bold" , textAlign:"center"}}
         >{t("appearance")}</Text>
 
         <View style={styles.ThemeRow}>
-          <Text style={styles.RowTitle}>{t("theme")}</Text>
+          <Text style={{ color: c.text, fontSize: 16, fontWeight: "bold"}}>{t("theme")}</Text>
           <Switch
+            style={{ marginRight: 10, marginBottom: 15 }}
             value={theme === "dark"}
             onValueChange={toggleTheme}
             thumbColor={c.background}
@@ -36,16 +37,16 @@ const Settings = () => {
           style={styles.CardRow}
         >
           <Text
-            style={styles.RowTitle}
+            style={{ color: c.text, fontSize: 16, fontWeight: "bold"}}
           >{t("lang")}</Text>
           <Button
-            style={{ marginRight: 10, marginLeft: 10, width: 100 }}
+            style={{  marginLeft: 10 }}
             onPress={() => i18n.changeLanguage('en')}
             buttonColor= {c.background}
             textColor= {c.text}
           >English</Button>
           <Button 
-          style={{ marginRight: 10 }} 
+          style={{ marginBottom: 10 }} 
           onPress={() => i18n.changeLanguage('ar')}
           buttonColor={c.background}
           textColor={c.text}
@@ -63,11 +64,11 @@ const Settings = () => {
             style={styles.Logout}
             onPress={() => router.replace('/Login')}
           >
-            <Text style={styles.RowTitle}>{t("logout")}</Text>
+            <Text style={{ color: c.text, fontSize: 16, fontWeight: "bold" }}>{t("logout")}</Text>
           </TouchableOpacity>
           <View style={styles.Version}>
-            <Text style={styles.RowTitle}>{t("version")}</Text>
-            <Text style={styles.RowTitle}>1.0.0</Text>
+            <Text style={{ color: c.text, fontSize: 16, fontWeight: "bold"}}>{t("version")}</Text>
+            <Text style={{ color: c.text, fontSize: 16, fontWeight: "bold" }}>1.0.0</Text>
           </View>
         </View>
       </View>
@@ -83,12 +84,6 @@ const styles = StyleSheet.create({
     padding: 20,
     marginBottom: 20
   },
-  RowTitle: {
-    color: "gray",
-    fontSize: 16,
-    fontWeight: "bold",
-    marginBottom: 10
-  },
   ThemeRow: {
     justifyContent: "space-between",
     flexDirection: "row",
@@ -101,6 +96,10 @@ const styles = StyleSheet.create({
     gap: 10
   },
   Logout: {
+    backgroundColor: "#ff5060",
+    padding: 15,
+    justifyContent: "center",
+    borderRadius: 10,
     marginBottom: 20,
     flexDirection: "row",
     alignItems: "center",

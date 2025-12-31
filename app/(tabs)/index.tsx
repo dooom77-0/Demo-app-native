@@ -18,7 +18,11 @@ export default function Index() {
         <Text
           style={{ color: c.text, fontSize: 16, fontWeight: "bold", marginBottom: 20,textAlign:"center" }}
           >{t("title")}</Text>
-        <Image source={require("@/assets/images/favicon.png")} style={{ width: 100, height: 100 }} />
+        <Image source={require("@/assets/images/icon.png")} style={{ width: 100, height: 100, marginBottom: 20, borderRadius: 50 }} />
+
+        <Text
+          style={{ color: c.text, fontSize: 16, marginBottom: 20,textAlign:"center" }}
+        >{t("description")}</Text>
         </View>
         
     </>

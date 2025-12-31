@@ -1,17 +1,22 @@
-import React from 'react'
 import { Tabs } from 'expo-router'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import {  SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
+// import { useContext} from 'react';
+// import { ThemeContext } from '@/hooks/ThemeContext';
 const _layout = () => {
+  // const context = useContext(ThemeContext);
+  // if (!context) return null;
+  // const { theme, colors } = context;
+  // const c = colors[theme];
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Tabs screenOptions={{
       headerShown: false,
-      tabBarActiveTintColor: "#f239a2",
-      tabBarInactiveTintColor: "#9CA3AF",
+      tabBarActiveTintColor: "#FBBF24",
+      tabBarInactiveTintColor: "#94A3B8",
       tabBarStyle: {
-        backgroundColor: "#1E293B",
-        borderTopWidth: 0,
+        backgroundColor: "#E6F4FE",
+        borderTopWidth: 1,
         height: 70,
         paddingTop: 5
       },

@@ -81,7 +81,7 @@ const Signup = () => {
         style={styles.login}
         mode='text'
         onPress={() => router.replace('./Login')}
-                >{t("already?")}{t("login")}</Button>
+                >{t("already?")} {t("login")}</Button>
         </View>
       </>
     

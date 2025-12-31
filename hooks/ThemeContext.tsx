@@ -26,11 +26,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     };
     const colors = {
         light: {
-            background: "#FFFFFF",
-            text: "#000000",
+            background: "#F2F2F2",
+            text: "#121212",
         },
         dark: {
-            background: "#000000",
+            background: "#1A1A1A",
             text: "#FFFFFF",
         }
     }
