@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'react-native-paper';
 import { router } from 'expo-router';
 
+
 const Settings = () => {
   const { t, i18n } = useTranslation();
   const context = useContext(ThemeContext);

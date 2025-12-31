@@ -5,7 +5,7 @@ import ar from "./ar.json";
 import en from "./en.json";
 
 i18next.use(initReactI18next).init({
-    lng: "ar", // اللغة الافتراضية
+    lng: "ar", 
     fallbackLng: "en",
     resources: {
       ar: { translation: ar },
@@ -14,7 +14,8 @@ i18next.use(initReactI18next).init({
     interpolation: {
       escapeValue: false,
     },
-  });
+});
+
 
 export default i18next;
 

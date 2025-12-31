@@ -1,4 +1,4 @@
-import "./i18n/i18n";
+import "@/i18n/i18n";
 import { Stack } from "expo-router";
 import { useState } from "react";
 import './global.css';
@@ -8,17 +8,17 @@ export default function RootLayout() {
   const [isLogin] = useState<boolean>(false);
   return (
     <SafeAreaProvider style={{ flex: 1 }}>
-      <ThemeProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-    {!isLogin ? 
-    (
-      <Stack.Screen name="Signup" options={{headerShown: false}} />
-    ) : 
-    (
-      <Stack.Screen name="(tabs)" options={{headerShown: false}} />
-    )}
-      </Stack>
-    </ThemeProvider>
+        <ThemeProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+      {!isLogin ? 
+      (
+        <Stack.Screen name="Signup" options={{headerShown: false}} />
+      ) : 
+      (
+        <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+      )}
+        </Stack>
+        </ThemeProvider>
     </SafeAreaProvider>
     
     );
